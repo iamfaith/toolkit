@@ -70,7 +70,7 @@ overleaf_dir = "./overleaf"
 Path(overleaf_dir).mkdir(parents=True, exist_ok=True)
 for project in obj:
     print('----')
-    os.system("cd ./overleaf && rm -rf '" + project['name'] + "' ")
+    # os.system("cd ./overleaf && rm -rf '" + project['name'] + "' ")
     print(project['name'], project['_id']['$oid'])
     parse(project['rootFolder'][0], project_id = project['_id']['$oid'], project_name=project['name'], owner=project['owner_ref']['$oid'])
-    os.system("mv '" + project['name'] + "' "  + overleaf_dir)
+    os.system(f"cp -rf './{project['name']}' {overleaf_dir} && rm -rf './{project['name']}'")
