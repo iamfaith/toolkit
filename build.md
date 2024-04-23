@@ -1,4 +1,9 @@
 
+crontab -e:
+
+*/1 * * * *  /home/faith/overleaf-toolkit/export.sh &&cd '/home/faith/overleaf-toolkit/overleaf/MUST Ph.D. Thesis-MOD' && git add . && git commit -m "Build overleaf-date" && git push -u origin "master"
+
+
 您的问题是如何生成TLS私钥和证书，这些文件可以用于配置nginx服务器，以支持HTTPS协议。TLS是一种安全协议，可以在网络通信中提供身份验证和加密功能。
 
 要生成TLS私钥和证书，您需要使用openssl工具，它是一个开源的加密库，可以在多种平台上运行。您可以按照以下步骤操作：
